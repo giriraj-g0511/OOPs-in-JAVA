@@ -1,0 +1,120 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial Black;}{\f1\fnil\fcharset0 @Microsoft YaHei;}{\f2\fnil\fcharset0 Calibri;}{\f3\fnil\fcharset0 Bahnschrift SemiLight;}{\f4\fnil\fcharset0 Bahnschrift SemiBold;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\ul\b\f0\fs32\lang9 ## 1)Encapsulation \ulnone :\par
+\b0\f1\fs24 It is process of wrapping and binding attributes and behaviours of an object together. we have to make attributes or variables as private members then provide getter and setter method for each variable to read and write operations.Providing getters and setters is optional but making attributes as private is mandatory.\par
+Encapsulation increase the security because no direct access to data variables.\par
+By encapsulation we achieve data hiding.\par
+\tab\b Data Hiding: \b0 Restrict direct access to that variables, and provide secured and indiret access to variables.\par
+To achieve data hiding -> \tab 1) make attributes at private\par
+\tab\tab\tab\tab\tab 2) design getter and setter method to secured and indirect access to variables \par
+\tab so whenever we need to read that varable we have to use getter method and whenever we have to update that variable we have to use setter method.\par
+\f2\par
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\par
+\b\i\f3\fs28\par
+\tab\ul\i0\f0\fs32 ## 2)Relationship \ulnone :\par
+\b0\f1\fs24 Assosiation between 2 or more objects is called as relationship.\par
+it has 2 types.\f0\fs32\par
+\ul\b\f4\fs28 1)Has-A Relationship\par
+\ulnone\b0\f2\fs24 in these type the the assosiation between 2 object represent dependent relationship.\par
+To achieve Has-A relationship one object hold the object reference variable of another object.\par
+it has 2 types and other 2 types depends on binding.\par
+\b\i\f3\fs28\tab\ul a)Aggregation :\par
+\ulnone\b0\i0\f2\fs24 It refers when object is dependent on another whether the other object not depend on another to be exist.The there is lose bonding between these two object.\par
+Like Library has Books,Book can be exist without library but library cant exist without books\par
+\b\i\f3\fs28\tab\ul b)Composition :\par
+\ulnone\b0\i0\f2\fs24 It referes when two objects are interdependent on each other or seperately they cant exist. in these there is Tigh Bonding between these two objects.\par
+Like Home cant exist without rooms and rooms cant exist without home,if there is home then it will have rooms and if there is rooms then it will have home or home name.\par
+\b\i\f3\fs28\tab\ul A)Early Binding:\ulnone\b0\i0\f2\fs24\par
+Dependent object is created when the object of class is created.\par
+It is done with the help of non static and static initializer and declarition statement.\par
+Mobile Has-A Battery: when  Mobile object is created then implicitly it will create object of Battery.\par
+\b\i\f3\fs28\tab\ul B)Lazy Binding:\ulnone\b0\i0\f2\fs24\par
+Dependent object is not created when the object of class is created.\par
+It is done with the help of methods.\par
+Computer Has-A Pendrive: when  Computer object is created then there is no need to create object of Pendrive Whenever we want to create Pendrive object then we have to call the method to create its object.\par
+\b\f4\fs28\par
+\ul 2)Is-A Relationship / Inheritance\par
+\ulnone\b0\f2\fs24 The relationship between two or more classes is similar parent-child relation.\par
+We use 'extends' keyword in child class to inhert the parent class. It will inherit the static and non static members of parent class except private data members.\par
+We cam reduce the visibility of data members but we cant increase it.\par
+We can access the parent class attributes and behaviours using child class reference.\par
+The parent class is loaded with the help of 'Super()' statement. It is used inside constrctor of child class. It is used the first statement inside constructor.If programmer fail to add that statement compiler will add it implicitly.\par
+\b\tab Super(): \b0 It id used to call the parent class constructor during the object creation of child class.It helps to load non static member into child class object.It is only used inside the constructor body.\par
+The constructor does not have the super call statement and This call statement together.If this call statement is present then compiler does not add the super call statement.\par
+We can use the static and non static members of parent and child class with the help of child class object reference but we can access the private data members and the static and non static blocks and constructor of class.\par
+At a time we can inherit only one class.\par
+\ul\b It has several types:\ulnone\par
+\i\tab\ul a)Single level:\ulnone\b0\i0  In the ther will be two classes which have Is-A relationship.\par
+\b\i\tab\ul b)Multilevel:\ulnone\b0\i0  In these there will more thatn 2 classes will have Is-A relationship like a continues chain.\par
+\b\i\tab\ul c)Heirarchical:\ulnone\b0\i0  In this the the classes will have single level and multi level Is-A relationship.Or we can that is is combination of Both.In this Parent class can have 2 or more child classes.\par
+\b\i\tab\ul d)Multiple:\ulnone\b0\i0  In this the child class will inherit multiple parents, but this is not supported in java, it is supported in java.We can use interface to implement multiple inheritance.\par
+\tab In java multiple inhertance of classes will leads use to diamon ambiguity problem so created of java restricted multiple inheritance with classes, enabled with interface.\par
+\b\tab\tab Diamond Ambiguity Problem:\b0  In these proble a child class inherits two parent classes and all these three classes(2 parent classes and 1 child class) have same method. When we call the method with the child class object reference then the compiler gets ambiguty to which method to invoke, to avoid this ambiguity we perform multiple inhertance with help of interface.\par
+\tab\tab In java toString() method present inside Object class and List Data Structure have its own toString() so at the execution time the toString() method is called according to the condition if your printing a list then it will call from List and if your printing classname with hashcode of object if you not overriden it.\b\par
+\i\tab\ul e)Hybrid :\ulnone\b0\i0  It is Combination of all above types.\b\par
+\ul Non-Primitive Type Casting:\ulnone\b0  It is done whenever we have parent child relationship.It also called as deriver typecasting.\b\par
+\tab Upcasting:\b0  it is type of non-primitive type cating in which we store child-class object reference into parent-class variable. We perform type cating to achieve generalization.\par
+\b\i\tab\tab Generalization\b0\i0  is refers as "When two or more classes having same method with different implementation then insted of creating different classes and implementing method we create one abstract class or interface or parent class which holds the common attributes and properties of child class and child class override that attributes and properties and provide new implemetation by these we achieve polymophism,we reuse the code and consize it, it simplifies the structure of child class also it follows bottom-up approach."\par
+\tab\tab we can call the parent-class attributes and behaviours using these reference variable but we not able to call the child class because the datatype of refernece variable is parent-type.\par
+\b\tab Downcating: \b0 for performing downcasting it is must to do upcasting. If we perform downcasting without doing upcasting then it will throw ClassCastException.\par
+Upcasting and Downcasting comes under Non-Primitive Datatypes TypeCasting.\fs22\par
+\par
+---------------------------------------------------------------------------------------------------------------------------\i\par
+\i0 ---------------------------------------------------------------------------------------------------------------------------\i\par
+\ul\b\i0\f0\fs32\par
+## 3)Polymorphism\ulnone :\par
+\b0\f1\fs24 Poly means many and morphism means form these concept refers to behaviour with same name but its implementation must be different in all cases. \par
+Same work for different parameters.\par
+it has 2 types\f0\fs32\par
+\ul\b\f4\fs30 1)Compile Time/ Overloading\fs28\par
+\ulnone\b0\f2\fs24 in these type compiler will decide which method to be called or invoked so it is called as compile time polymorphism\par
+we can achieve it by several ways\par
+\b\i\f3\fs28\tab\ul a)Constructor overloading :\par
+\ulnone\b0\i0\f2\fs24 We having multiple constructors with different in formal arguments but name must be same is called as constructor overloading \par
+Here we can also use constructor chaining, in constructor chaining in that we write constructor for different argument and first statement of its body contains call to another constructor using this keyword.\par
+To perform constructor chaining with super then the class must have is a relation ship then child constructor have first statement which called super class constructor with some parameters\par
+\b\i\f3\fs28\tab\ul b)Method overloading :\par
+\ulnone\b0\i0\f2\fs24 Writing methods which having same name but need to follow minimum one of below:\par
+\tab 1. different return type\par
+\tab 2. different datatype of formal argument\par
+\tab 3. different size of formal argument\par
+any one above condition must be followed while method overloading and all method must be present in same class.\par
+At compile time compiler will bind method call statement with method body.\par
+\b\i\f3\fs28\tab\ul c)Method Shadowing :\par
+\ulnone\b0\i0\f2\fs24 For implementing these there must be is a relationship between 2 or more classes and upcasting is needed.\par
+Method shadowing is only applicable for static method. When we create a sub class then subclass must override or provide new implementation to that static method (do not change method declaration) then in driver class when we store subclass object reference into parent type variable and we try to call parent static method which is overrided in sub class it will call parent class static method because it holding parent type reference or data type of that variable is parent-type.\par
+\b\i\f3\fs28\tab\ul d)Variable Shadowing :\par
+\ulnone\b0\i0\f2\fs24 For implementing these there must be is a relationship between 2 or more classes and upcasting is needed.\par
+In these these static and non-static variable is used it similar to method shadowing.\par
+First do upcasting then if you call the static overriden attributes and behaviour with upcasted reference then it will execute parent class attributes and behaviour becuase the dataype of that reference variable is parent-type.\par
+because the Parent-type variable act as class refernce to call static cotext. \par
+\b\f4\fs28\par
+\ul\fs30 2)Run Time / Overriding\fs28\par
+\ulnone\b0\f2\fs24 In these compiler will not decide which method to be invoke, at run time JVM will decide which method to be invoke.\par
+It is used to when we have parent method and we have to provide new implementation to that method the we go for runtime pokymorphism.\par
+For implementing these there must be is a relationship between 2 or more classes and upcasting is needed.\par
+then we call the overriden method with upcasted reference then it will invoke the newly implimented method.\par
+\ul\b\i Note:\b0\i0  \ulnone\i we cant override private members.\par
+\par
+\i0 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\par
+\b\i\f3\fs28\tab\par
+\tab\ul\i0\f0\fs32 ## 4)Abbstraction \ulnone :\par
+\b0\f1\fs24 It means designing fprocess to display only features without implementation.\par
+Process of hiding implementation details and only showing the features.\par
+there 2 ways to achieve abstarction.\par
+these both type contains abstract methods and concrete methods\par
+\b Abstarct Methods:\b0  Methods without method body and prefix with 'abstract' modifier.\par
+\b Concrete Methods: \b0 Methods with implementation (contains implementation of abstract methods).\f0\fs32\par
+\ul\b\f4\fs28 1)With the help of classes\ulnone\b0\f2\fs24\par
+It also have 2 types of classes\par
+\b a)Abstarct class: \b0 It contains abstact methods and concrete methods. If any one method is also abstract then we have to make that class as abstract class and we cant create direct object of abstract class. To create the object of abstact class it is mandatory to concrete class inherits the Abstract class.\par
+\b b)Concrete class:\b0  It contains implementation to all abstact methods.It is not prefix with abstract modifier. Concrete class inherist the Abstarct class is mandatory.\par
+\par
+In Driver class we have to create abstact class variable which going to hold the object reference of concrete class.\par
+\par
+\par
+\ul\b\f4\fs28 2)With the help of interfaces\par
+\ulnone\b0\f2\fs24 It also same as abstraction by class but here is one exta point that we can implement multiple interfaces which supports multiple inheritance.\par
+It also consist abstract interface which is implemented by concrete class. and all other things are simmilar to above.\fs22\par
+}
+ 
